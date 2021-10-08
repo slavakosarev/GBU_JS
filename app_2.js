@@ -40,7 +40,6 @@ let x = 1 + (a *= 2); //5
 
 
 /** 3.
-   *? Вроде все работает, но такое ощущение, что чего-то не хватает. Игорь, прошу оставить комментарий. Спасибо.
    ** В switch передаем постоянное значение true. 
    ** В case прописываем условия, а потом инструкции, что делать если условие истинно. 
    ** На мой взгляд, конструкция switch это самое простое и оптимальное решение. Можно было бы повозиться с ветвлением, но врядли получится так лаконично.
@@ -91,7 +90,6 @@ multiplyNum(5, 7);
 
 
 /** 5.
-   *? Все работает, но в стэке висит функция anonymous, как будто не может завершить работу. Или я что-то не понимаю.
    ** function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. 
    ** В switch передаем параметр operation, в case название функции в строке. 
    ** В инструкциях возвращаем функции из предыдущего задания с новыми аргументами.
@@ -116,8 +114,6 @@ mathOperation(3, 8, 'divideNum')
 mathOperation(3, 8, 'multiplyNum')
 
 /** 6.
-   *! Возможно "корявая" конструкция, но вроде работает)
-   *? Игорь, насколько критично, что я поместил switch в else?
    ** Запрашиваем у пользователя сумму. Поученный результат присваиваем переменной rub. С помощью alert выводим сообщение. В сообщение добавляем шаблонные литералы перемнной rub и вызываем функцию с параметрами. 
    ** Функция getLastCharacter извлекает последний символ из полученной строки. 
    ** Подробнее о функии: 
@@ -154,3 +150,81 @@ function getLastCharacter() {
       }
 }
 alert(`Ваша сумма ${rub} ${getLastCharacter('рубль', 'рублей', 'рубля')} успешно зачислена.`);
+
+/** Дополнительно
+ * * * Функция Рекурсия - когда функция вызывает саму себя.
+ * @param {*} x 
+ * @param {*} n 
+ * @returns {number} 
+ */
+function pow(x, n) {
+   if (n == 1) {
+      return x;
+   } else {
+      return x * pow(x, n - 1);
+   }
+}
+console.log(pow(2, 3)); //8
+
+/**
+ * * Рекурсия с Фибоначчи(начиная с двух начальных значений, каждое число равно сумме двух предыдущих.)
+ * @param {number} n 
+ * @param {number} prev1 
+ * @param {number} prev2 
+ * @returns {string}
+ */
+function fibonacci(n, prev1, prev2) {
+   let current = prev1 + prev2;
+   let fibonacci_string = current + " ";
+   if (n > 1)
+      fibonacci_string += fibonacci(n - 1, current, prev1);
+   return fibonacci_string;
+}
+console.log(fibonacci(15, 1, 0));
+
+// Или так:
+function getFibonacci(n) {
+   if (n === 0) {
+      return 0;
+   }
+   if (n === 1) {
+      return 1;
+   }
+   else {
+      return getFibonacci(n - 1) + getFibonacci(n - 2);
+   }
+}
+let result = getFibonacci(8); //21 
+console.log(result); // 21
+
+/**
+ * * Функция(рекурсия) определяет факториал числа.
+ * * Факториал числа n — это произведение натуральных чисел от 1 до n:
+ * * 0! = 1
+ * * 1! = 1*1 = 1 (0!*1)
+ * * 2! = 1*2 = 2 (1!*2)
+ * * 3! = 1*2*3 = 6 (2!*3)
+ * * 4! = 1*2*3*4 = 24 (3!*4)
+ * * 5! = 1*2*3*4*5 = 120 (!4*5)
+ * @param {number} n 
+ * @returns {number}
+ */
+function getFactorial(n) {
+   if (n === 1) {
+      return 1;
+   }
+   else {
+
+      return n * getFactorial(n - 1);
+   }
+}
+let result = getFactorial(4);
+console.log(result); // 24
+
+/**
+ * * Стрелочные функции с рекурсией
+ * @param {*} x 
+ * @returns {number}
+ */
+let f = x => x ? x * f(x - 1) : 1; // Факториал
+let f = x => x > 1 ? f(x - 1) + f(x - 2) : x; // Фибоначчи
