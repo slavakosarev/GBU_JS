@@ -1,0 +1,80 @@
+body {
+   font-family: sans-serif;
+   background-color: rgb(122, 218, 221);
+   max-width: 1400px;
+   margin: 0 auto;
+   position: relative;
+}
+img {
+   width: 180px;
+   display: block;
+}
+p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #1F3F68;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+h1 {
+   font-size: 64px;
+   color: #131d2b;
+   width: 510px;
+   font-weight: 300;
+   line-height: 74px;
+   letter-spacing: 0.04em;
+   margin-bottom: 32px;
+}
+h2 {
+   font-weight: 500;
+   font-size: 44px;
+   color: #131d2b;
+   text-align: center;
+}
+h5 {
+   font-size: 20px;
+   line-height: 30px;
+   color: #1d2c3f;
+   letter-spacing: 0.05em;
+   margin-bottom: 14px;
+}
+button {
+   font-size: 16px;
+   line-height: 26px;
+   text-align: center;
+   letter-spacing: 0.04em;
+   color: #FFFFFF;
+   background: #5A98D0;
+   -webkit-box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
+   box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
+   border-radius: 10px;
+   padding: 15px 50px;
+   text-decoration: none;
+   margin-top: 71px;
+}
+#dropdownMenuButton {
+   display: block;
+   margin: 0 auto 20px;
+}
+.close {
+   background: #f87d57;
+   position: absolute;
+   top: -3%;
+   left: 90%;
+}
+.close span {
+   font-size: 50px;
+   display: block;
+   align-self: center;
+}
+textarea {
+   margin: 20px auto 20px;
+   display: block;
+   width: 50%;
+   height: 100px;
+   border-radius: 5px;
+   background: #e475f3;
+   -webkit-box-shadow: 10px 10px 20px rgba(53, 110, 173, 0.2);
+   box-shadow: 10px 10px 20px rgba(161, 94, 248, 0.2);
+   font-size: larger;
+}
