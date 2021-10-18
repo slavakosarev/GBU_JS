@@ -1,4 +1,7 @@
 # GBU_JS
 Beginner level
-HW#1 all tasks are tested
-
+1. Типы данных
+2. Свитч и функции
+3. Циклы и массивы
+4. Объект и конструктор
+5. DOM
